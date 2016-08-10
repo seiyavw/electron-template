@@ -29,11 +29,15 @@ gulp.task('sass', () => {
 });
 
 gulp.task('browserify', () => {
-  return browserify(`${SRC}/js/main.js`)
+  return browserify({
+      entries: [`${SRC}/js/main.js`],
+      detectGlobals: false,
+      builtins: []
+    })
     .transform('babelify', {presets: ['es2015', 'react']})
     .bundle()
     .pipe(source('main.js'))
-    .pipe(streamify(uglify()))
+    // .pipe(streamify(uglify()))
     .pipe(gulp.dest(`${DEST}/js`));
 })
 
