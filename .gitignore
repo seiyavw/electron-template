@@ -1,0 +1,6 @@
+node_modules
+dist
+app/public
+.sass-cache
+*.log
+sample_app-darwin-x64
