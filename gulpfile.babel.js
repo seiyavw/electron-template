@@ -34,10 +34,10 @@ gulp.task('browserify', () => {
       detectGlobals: false,
       builtins: []
     })
-    .transform('babelify', {presets: ['es2015', 'react']})
+    .transform('babelify', {presets: ['es2015', 'stage-0', 'react']})
     .bundle()
     .pipe(source('main.js'))
-    // .pipe(streamify(uglify()))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest(`${DEST}/js`));
 })
 

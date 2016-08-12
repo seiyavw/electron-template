@@ -65,11 +65,11 @@ ipcMain.on("event-from-application", (sender, e) => {
        serials
  ====================*/
 
-const port = new serialPort.SerialPort("/dev/cu.usbmodem1411", {
-  baudrate: 9600,
-  parser:serialPort.parsers.readline("\n")
-});
-
-port.on('data', (data) => {
-  console.log('data received: ' + data);
-});
+// const port = new serialPort.SerialPort("/dev/cu.usbmodem1411", {
+//   baudrate: 9600,
+//   parser:serialPort.parsers.readline("\n")
+// });
+//
+// port.on('data', (data) => {
+//   console.log('data received: ' + data);
+// });
